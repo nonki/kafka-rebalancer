@@ -1,0 +1,33 @@
+plugins {
+	id 'java'
+	id 'application'
+}
+
+group = 'com.github.nonki.kafka'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+	jar {
+		manifest {
+			attributes 'Main-Class': 'com.github.nonki.kafka.rebalancer.RebalancerApplication'
+		}
+	}
+}
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+}
+
+test {
+	useJUnitPlatform()
+}
+
+mainClassName = 'com.github.nonki.kafka.rebalancer.RebalancerApplication'
